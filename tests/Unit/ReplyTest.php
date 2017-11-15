@@ -10,12 +10,8 @@ class ReplyTest extends TestCase
 {
     use DatabaseMigrations;
 
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function test_it_has_an_owner()
+    /** @test */
+    public function it_has_an_owner()
     {
         $reply = factory('App\Reply')->create();
 
