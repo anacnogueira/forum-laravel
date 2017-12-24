@@ -27,8 +27,11 @@ class Reply extends Model
             $attributes = ['user_id' => auth()->id()];
 
             return $this->favorites()->create($attributes);
-        }
+        }        
+    }
 
-        
+    public function isFavorited()
+    {
+        return $this->favorites()->where('user_id', auth()->id())->exists();
     }
 }
